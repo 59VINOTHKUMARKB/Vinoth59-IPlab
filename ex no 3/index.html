@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="body">
+        <div class="header">
+            <h1 class="header-title">RoyalCourt</h1>
+            <a class="signin-header" href="#">Signin</a>
+        </div>
+        <div class="inner">
+            <p>Welcome to Your Hotel, where luxury meets comfort. Nestled in the heart of the city, our hotel
+                offers a captivating blend of modern elegance and classic charm. With stylishly appointed rooms,
+                breathtaking views, and personalized service, we aim to make your stay a memorable experience.
+            </p>
+  </div>
+    </div>
+    <section class="sec-1">
+        <h1 class="sec1-title">Our Special Features</h1>
+        <div class="image-grid">
+            <div class="image-item" onclick="toggleContent(this)">
+                <img src="roomsImage.jpg" alt="Image 1">
+                <div class="content">
+                    <p>Welcome to Your Hotel, where luxury meets comfort. Nestled in the heart of the city, our hotel
+                        offers a captivating blend of modern elegance and classic charm.</p>
+                </div>
+            </div>
+            <div class="image-item"id="unique"  onclick="toggleContent(this)">
+                <img src="backImage1.jpg" alt="Image 2">
+                <div class="content">
+                    <p>Welcome to Your Hotel, where luxury meets comfort. Nestled in the heart of the city, our hotel
+                        offers a captivating blend of modern elegance and classic charm.</p>
+                </div>
+            </div>
+            <div class="image-item" onclick="toggleContent(this)">
+                <img src="hotelroomImage.jpg" alt="Image 1">
+                <div class="content">
+                    <p>Welcome to Your Hotel, where luxury meets comfort. Nestled in the heart of the city, our hotel
+                        offers a captivating blend of modern elegance and classic charm.</p>
+                </div>
+            </div>
+            <!-- <div class="image-item" id="unique" onclick="toggleAllContent(this)"> -->
+                <button class="image-item" onclick="toggleForm()"><img src="roomsImage.jpg" alt="hotelroom" id="unique"></button>
+                <div class="content">
+                    <p>Welcome to Your Hotel, where luxury meets comfort. Nestled in the heart of the city, our hotel
+                        offers a captivating blend of modern elegance and classic charm.</p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; " id="hidden-form">
+            <label for="name" style="color: black;font-size:30px;padding-right: 45px;">Name:</label>
+            <input type="text"><br><br>
+            <label for="email" style="color: black;font-size:30px;padding-right: 45px;">Email:</label>
+            <input type="email"><br><br>
+            <label for="password" style="color: black;font-size:30px;">Password:</label>
+            <input type="password"><br><br>
+            <label for="rooms-no" style="color: black;font-size:30px;padding-right: 45px;">No of Rooms:</label>
+            <input type="number"><br><br>
+            <label for="type" style="color: black;font-size:30px;padding-right: 45px;">Room type</label>
+            <input type="text"><br><br>
+            <a class="btn"style="font-size: 20px;
+            font-family: cursive;
+            padding: 10px;
+            border-color: aqua;
+            border-style: solid;
+            border-radius: 10px;
+            top: 120%;
+            width: 100px;
+            height: 30px;
+            color: black;
+            text-decoration: none;
+            text-align: center;"href="#">Register</a>
+            </div>
+    </section>
+    
+    
+
+</body>
+<script>
+    function toggleContent(element) {
+    element.classList.toggle('active');
+}
+
+            
+                    function toggleForm(){
+
+    
+                        var divisionForm = document.getElementById('hidden-form');
+                        if(divisionForm.style.visibility == 'hidden'){
+                         divisionForm.style.visibility = 'visible';
+                        }
+                        else{
+                        divisionForm.style.visibility = 'hidden';
+                        }
+                    }
+
+
+
+
+
+
+</script>
+</html>
