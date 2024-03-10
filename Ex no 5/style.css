@@ -1,0 +1,33 @@
+body{
+    background-image: url(bg\ image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#form{
+    margin-top: 100px;
+    margin-left: 500px;
+    font-size: 20px;
+    font-family: cursive;
+}
+button{
+    height: 50px;
+    width: 200px;
+    background-color: aqua;
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 15%;
+    font-size: large;
+    font-family: cursive;
+}
+button:hover{
+    background-color: black;
+    color: aqua;
+    text-align: center;
+}
+h1{
+    font-size: 15px;
+    padding: 10px;
+    display: block;
+}

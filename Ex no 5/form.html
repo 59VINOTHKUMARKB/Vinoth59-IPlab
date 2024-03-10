@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex no 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form" onsubmit="form_validation(event)">
+        <label for="in-name" id="name">Name:</label>&nbsp;
+        <input type="text" id="in-name"><br><h1 id="nameop"></h1>
+        <label for="in-age" id="age">Age:</label>&nbsp;
+        <input type="number" id="in-age"><br><h1 id="ageop"></h1>
+        <label for="in-dob" id="dob">Birth Date:</label>&nbsp;
+        <input type="date" id="in-dob"><br><h1 id="dobop"></h1>
+        <label for="in-email" id="email">Email:</label>&nbsp;
+        <input type="text" id="in-email"><br><h1 id="emailop"></h1>
+        <label for="in-continent" id="continent">Continent:</label>&nbsp;
+        <select name="continent" id="in-continent"><br><br>
+            <option value="select">Select</option>
+            <option value="asia">Asia</option>
+            <option value="na">North America</option>
+            <option value="europe">Europe</option>
+            <option value="africa">Africa</option>
+        </select><br><h1 id="contop"></h1>
+        <label>Are You Cool:</label>&nbsp;
+        <input type="radio" name="cool" id="cool" value="yes"> Yes
+        <input type="radio" name="cool"id="cool" value="no"> No<br><h1 id="coolop"></h1>
+        <label for="colors">What 2 Colors You Like?</label>&nbsp;
+        <input type="text" id="colors"><br><h1 id="colop"></h1>
+        <label>What do You Like?</label>&nbsp;
+        <input type="checkbox" name="like">CodeIgniter
+        <input type="checkbox" name="like">Fuel
+        <input type="checkbox" name="like">Kohana
+        <input type="checkbox" name="like">Laravel
+        <input type="checkbox" name="like">Zend<br><h1 id="likeop"></h1>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+<script>
+    function form_validation(event){
+        event.preventDefault(); 
+        const name = document.getElementById("in-name").value;
+        const name_reg = /[A-Z]{1,}\s[A-Z]{1}[a-z]+/;
+        if(name_reg.test(name)) {
+            document.getElementById("nameop").textContent = "Nice Name Buddy!";
+            document.getElementById("nameop").style.color="green"
+        } else {
+            document.getElementById("nameop").textContent = "That Name is Not Original Enough";
+            document.getElementById("nameop").style.color="red"
+        }
+
+        const age = document.getElementById("in-age").value;
+        if(age>0&&age<20)
+        {
+            document.getElementById("ageop").textContent = "Hello Kid!";
+            document.getElementById("ageop").style.color="green"
+        }
+        else if(age>=20&&age<=40)
+        {
+            document.getElementById("ageop").textContent = "Yeah,Hardworking Age!";
+            document.getElementById("ageop").style.color="green"
+        }
+        else if(age>40 && age<100){
+            document.getElementById("ageop").textContent = "A Wise age!";
+            document.getElementById("ageop").style.color="green"
+        }
+        else{
+            document.getElementById("ageop").textContent = "Not Looks like a Age";
+            document.getElementById("ageop").style.color="Red"
+        }
+
+        const email=document.getElementById("in-email").value;
+        const email_regex=/[a-z]+@[a-z]+\.[a-z]{3}/
+        if(email_regex.test(email)) {
+            document.getElementById("emailop").textContent = "Valid Email ,No Problem!"
+            document.getElementById("emailop").style.color="green"
+        } 
+        else if(email===""){
+            document.getElementById("emailop").textContent = "Email Required"
+            document.getElementById("emailop").style.color="red"
+        }
+
+        else {
+            document.getElementById("emailop").textContent = "Invalid Email";
+            document.getElementById("emailop").style.color="Red"
+        }
+
+        const continent=document.getElementById("in-continent").value;
+        if(continent=="select")
+        {
+            document.getElementById("contop").textContent="Continent is Required"
+            document.getElementById("contop").style.color="red"
+        }
+        else{
+            document.getElementById("contop").textContent="Continent is Selected"
+            document.getElementById("contop").style.color="green"
+        }
+
+        const coolRadios = document.querySelectorAll('input[name="cool"]');
+        var sel = false;
+
+        for (var i = 0; i < coolRadios.length; i++) {
+            if (coolRadios[i].type === "radio" && coolRadios[i].checked) {
+                sel = true;
+                break;
+            }
+        }
+
+        if (!sel) {
+            document.getElementById("coolop").textContent = "Cool Field is Required!";
+            document.getElementById("coolop").style.color = "red";
+        } else {
+            document.getElementById("coolop").textContent = "Be Cool Buddy!";
+            document.getElementById("coolop").style.color = "green";
+        }
+
+
+        const colors=document.getElementById("colors").value;
+        if(colors==="")
+        {
+            document.getElementById("colop").textContent = "Color Field is Required!";
+            document.getElementById("colop").style.color = "red";
+        }
+        else{
+            document.getElementById("colop").textContent = "Nice Colors!";
+            document.getElementById("colop").style.color = "green";
+        }
+
+        const likeRadios = document.querySelectorAll('input[name="like"]');
+            var sel = false;
+
+            for (var i = 0; i < likeRadios.length; i++) {
+                if (likeRadios[i].type === "checkbox" && likeRadios[i].checked) {
+                    sel = true;
+                    break;
+                }
+            }
+
+            if (!sel) {
+                document.getElementById("likeop").textContent = "Like Field is Required!";
+                document.getElementById("likeop").style.color = "red";
+            } else {
+                document.getElementById("likeop").textContent = "Thank You for Sharing!";
+                document.getElementById("likeop").style.color = "green";
+}
+
+    }
+        
+
+
+    
+</script>
+</html>
